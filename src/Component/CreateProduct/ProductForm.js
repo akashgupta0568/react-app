@@ -1,11 +1,15 @@
 import React from 'react';
 import { useState } from 'react';
+import './Productform.css';
+
 
 const ProductForm = () => {
 
-    const [productName, setProductName] = useState('');
+  const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productDescription, setProductDescription] = useState('');
+  const [isAvailable, setIsAvailable] = useState(false); 
+  
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -13,10 +17,13 @@ const ProductForm = () => {
         console.log('Product Name:', productName);
         console.log('Product Price:', productPrice);
         console.log('Product Description:', productDescription);
+        console.log('Is Available:', isAvailable);
+
         // Reset form fields after submission
         setProductName('');
         setProductPrice('');
         setProductDescription('');
+        setIsAvailable(false);
       };
   return (
     <div className="container">
@@ -32,6 +39,12 @@ const ProductForm = () => {
         <div className="mb-3">
           <label htmlFor="productDescription" className="form-label">Product Description</label>
           <textarea className="form-control" id="productDescription" rows="3" value={productDescription} onChange={(e) => setProductDescription(e.target.value)}></textarea>
+        </div>
+        <div className="form-check mb-3">
+          <input className="form-check-input" type="checkbox" id="isAvailable" checked={isAvailable} onChange={(e) => setIsAvailable(e.target.checked)} />
+          <label className="form-check-label" htmlFor="isAvailable">
+            Available
+          </label>
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
       </form>

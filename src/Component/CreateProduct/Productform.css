@@ -1,0 +1,39 @@
+/* .form-check-input[type="checkbox"] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+  .form-check-input[type="checkbox"] + .form-check-label::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 16px;
+    background-color: #ddd;
+    border-radius: 8px;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  
+  .form-check-input[type="checkbox"]:checked + .form-check-label::before {
+    background-color: #007bff;
+  }
+  
+  .form-check-input[type="checkbox"] + .form-check-label::after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.2s ease;
+  }
+  
+  .form-check-input[type="checkbox"]:checked + .form-check-label::after {
+    transform: translateX(16px);
+  }
+   */

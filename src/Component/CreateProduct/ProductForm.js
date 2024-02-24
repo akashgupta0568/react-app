@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './Productform.css';
 
 
-const ProductForm = () => {
+const ProductForm = (props) => {
 
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState('');
@@ -18,13 +18,21 @@ const ProductForm = () => {
         console.log('Product Price:', productPrice);
         console.log('Product Description:', productDescription);
         console.log('Is Available:', isAvailable);
-
-        // Reset form fields after submission
         setProductName('');
         setProductPrice('');
         setProductDescription('');
         setIsAvailable(false);
+      let product= {
+        pName:productName,
+        pPrice: productPrice,
+        pDes: productDescription,
+        pAvailable : isAvailable
+      }
+      console.log(product);
+        // props.createProduct(product);
+        props.createProduct(product);
       };
+
   return (
     <div className="container">
       <form onSubmit={handleSubmit}>
